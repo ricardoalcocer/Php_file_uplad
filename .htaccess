@@ -1,0 +1,15 @@
+# Force HTTPs
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+LimitRequestBody 0
+
+php_value upload_max_filesize 8000M
+php_value post_max_size 8500M
+#php_value max_execution_time 600
+php_value max_input_time 30
+
+# Routes
+RewriteEngine On
+RewriteRule ^home ./controllers/home.php [NC,L]
+
